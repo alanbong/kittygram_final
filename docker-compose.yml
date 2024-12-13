@@ -24,8 +24,7 @@ services:
   frontend:
     env_file: .env
     build: ./frontend/
-    command: cp -r /app/build/. /frontend_static/
-    # command: sh -c "npm run build && cp -r /app/build/. /frontend_static/"
+    command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   
