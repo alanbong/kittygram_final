@@ -16,24 +16,24 @@ services:
     image: alanbong/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static
-      - media:/app/media
+      - static:/backend_static
+      - media:/backend_media
     depends_on:
       - db
 
   frontend:
     image: alanbong/kittygram_frontend
     env_file: .env
-    command: cp -r /app/build/. /static/
+    command: cp -r /app/build/. /frontend_static/
     volumes:
-      - static:/static
+      - static:/frontend_static
   
   gateway:
     image: alanbong/kittygram_gateway
     env_file: .env
     volumes:
-      - static:/static
-      - media:/app/media
+      - static:/gateway_static
+      - media:/gateway_media
     depends_on:
       - backend
     
