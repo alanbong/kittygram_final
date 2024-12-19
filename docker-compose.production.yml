@@ -16,8 +16,8 @@ services:
     image: alanbong/kittygram_backend
     env_file: .env
     volumes:
-      - static:/backend_static/
-      - media:/backend_media/
+      - static:/code/backend_static/
+      - media:/code/backend_media/
     depends_on:
       - db
 
